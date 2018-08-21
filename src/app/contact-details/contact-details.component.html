@@ -1,0 +1,41 @@
+<div style="margin-left:25%;padding:20px 200px 20px 50px;height:auto;margin-top: 58px;overflow-x: hidden;overflow-y: auto;">
+    <div *ngIf="selectedContact" style="padding:20px;">
+
+
+        <div>
+            <div style="width: 20%;display: inline-block;height: 130px;float: left;">
+                <img [src]="selectedContact.img" height="100%" />
+            </div>
+            <div style="padding-left: 10px;width: 70%;display: inline-block;height: 130px;">
+                <div>
+                    <input type="button" class="button" value="Send Message!" />
+                </div>
+                <div style="margin-top:5px;">
+                    <span *ngFor="let item of ratings;let i=index" 
+                    [className]="i<=(selectedContact.rating-1) ? 'fa fa-heart checked' : 'fa fa-heart'"></span>
+                    <!-- <span class="fa fa-heart checked"></span>
+                    <span class="fa fa-heart checked"></span>
+                    <span class="fa fa-heart"></span>
+                    <span class="fa fa-heart"></span> -->
+                </div>
+            </div>
+        </div>
+        <p>{{selectedContact.Description}}</p>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Likes</th>
+                    <th>Dislikes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of selectedContact.Likes; let i = index">
+                    <td>{{item}}</td>
+                    <td>{{selectedContact.Dislikes[i]}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

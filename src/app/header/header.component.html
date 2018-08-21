@@ -1,0 +1,20 @@
+<div class="header sticky topnav">
+    <div class="search-container">
+        <input type="text" placeholder="Search.." name="search" (input)="onSearchChange($event.target.value)">
+    </div>
+    <div class="user-container">
+        <div style="display: inline-block;margin-top: 18px;margin-right: 10px;">
+            <label>User Name</label>
+        </div>
+
+        <div class="dropdown" style="float:right;">
+            <button class="dropbtn">
+                <img src="./assets/user-dd.png" style="height: 100%;" />
+            </button>
+            <div class="dropdown-content">
+                <span href="#">Rate this app</span>
+                <span href="#">Log out</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<ul >
+  <li [ngStyle]="contactStyles" (click)="selectUser(contact)" *ngFor="let contact of datalist">
+    <a [className]="contact==selectedUser? 'active' : ''">
+      <span>{{contact.name}}</span>
+      <span [className]="contact==selectedUser? 'fa fa-caret-right' : 'fa '"  
+      style="float: right;padding-right: 10px;"></span>
+    </a>
+  </li>
+</ul>
